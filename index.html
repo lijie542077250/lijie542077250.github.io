@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зелёный учебный портал</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+   <header>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-leaf"></i>
+            <h1>Зелёный учебный портал</h1>
+        </div>
+        
+        <!-- 添加用户信息带照片 -->
+        <div class="user-profile">
+            <div class="user-photo">
+                <img src="photo.jpg" alt="Ли Цзе" id="user-photo">
+                <div class="photo-upload">
+                    <label for="photo-input" title="Сменить фото">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="photo-input" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            <div class="user-info">
+                <span class="user-name">Ли Цзе</span>
+                <span class="user-group">IT(m)-1-24</span>
+                <span class="user-status">Онлайн</span>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <!-- 导航链接保持不变 -->
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a>
+            <a href="schedule.html"><i class="fas fa-calendar-alt"></i> Расписание</a>
+            <a href="grades.html"><i class="fas fa-chart-line"></i> Успеваемость</a>
+            <a href="notes.html"><i class="fas fa-book"></i> Заметки</a>
+        </nav>
+    </div>
+</header >
+
+    <!-- 学期状态栏 -->
+    <div class="status-bar">
+        <div class="container">
+            <div class="status-items">
+                <div class="status-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>2025-26 учебный год</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-sun"></i>
+                    <span>Осенний семестр</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>3-семестр | 30 кредитов</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Загрузка...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- 快速访问面板 -->
+        <section class="quick-panel">
+            <h2><i class="fas fa-bolt"></i> Быстрый доступ</h2>
+            <div class="quick-grid">
+                <a href="schedule.html" class="quick-card">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Сегодня</h3>
+                    <p>2 занятия до 10:50</p>
+                </a>
+                <a href="grades.html" class="quick-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Успеваемость</h3>
+                    <p>6 предметов | 30 кредитов</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Задания</h3>
+                    <p>3 новых задания</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Материалы</h3>
+                    <p>12 файлов доступно</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 两列布局 -->
+        <div class="two-column">
+            <!-- 左列 -->
+            <div class="column">
+                <!-- 课程进度 -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-book"></i> Мои предметы</h2>
+                        <span class="badge">6 предметов</span>
+                    </div>
+                    
+                    <div class="subject-list">
+                        <div class="subject-item">
+                            <div class="subject-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="subject-info">
+                                <h4>Администрирование компьютерных систем</h4>
+                                <div class="subject-meta">
+                                    <span><i class="fas fa-user"></i> Нааматова Ж.Б.</span>
+                                    <span><i class="fas fa-credit-card"></i> 4 кредита</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%"></div>
+                                    <span>45% завершено</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subject-item">
+                            <div class="subject-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="subject-info">
+                                <h4>Программное обеспечение для разработки ЭОР</h4>
+                                <div class="subject-meta">
+                                    <span><i class="fas fa-user"></i> Нааматова Ж.Б.</span>
+                                    <span><i class="fas fa-credit-card"></i> 4 кредита</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 30%"></div>
+                                    <span>30% завершено</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subject-item">
+                            <div class="subject-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="subject-info">
+                                <h4>Применение веб-систем дистанционного образования</h4>
+                                <div class="subject-meta">
+                                    <span><i class="fas fa-user"></i> Жолочубеков Н.Ж.</span>
+                                    <span><i class="fas fa-credit-card"></i> 2 кредита</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 60%"></div>
+                                    <span>60% завершено</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="view-all">Показать все предметы →</a>
+                    </div>
+                </section>
+
+                <!-- 近期考试 -->
+                <section class="card">
+                    <h2><i class="fas fa-clock"></i> Ближайшие экзамены</h2>
+                    <div class="exams-list">
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">03</span>
+                                <span class="month">Сен</span>
+                                <span class="year">2025</span>
+                            </div>
+                            <div class="exam-info">
+                                <h4>Администрирование компьютерных систем</h4>
+                                <p>Экзамен | 4 кредита</p>
+                                <div class="countdown">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span>Осталось: 14 дней</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">03</span>
+                                <span class="month">Сен</span>
+                                <span class="year">2025</span>
+                            </div>
+                            <div class="exam-info">
+                                <h4>Программное обеспечение ЭОР</h4>
+                                <p>Экзамен | 4 кредита</p>
+                                <div class="countdown">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span>Осталось: 14 дней</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 右列 -->
+            <div class="column">
+                <!-- 今日课表 -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-calendar-day"></i> Сегодняшнее расписание</h2>
+                        <span class="date-today" id="today-date"></span>
+                    </div>
+                    
+                    <div class="schedule-today">
+                        <div class="schedule-item current">
+                            <div class="time-block">
+                                <span class="time">08:00 - 09:20</span>
+                                <span class="duration">80 мин</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Администрирование компьютерных систем</h4>
+                                <p class="lecture-type"><i class="fas fa-chalkboard-teacher"></i> Лекция</p>
+                                <p class="location"><i class="fas fa-building"></i> Корпус №5, ауд.212</p>
+                                <p class="teacher"><i class="fas fa-user"></i> Нааматова Ж.Б.</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status-badge in-progress">Идёт сейчас</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="time-block">
+                                <span class="time">09:30 - 10:50</span>
+                                <span class="duration">80 мин</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Администрирование компьютерных систем</h4>
+                                <p class="lecture-type"><i class="fas fa-chalkboard-teacher"></i> Лекция</p>
+                                <p class="location"><i class="fas fa-building"></i> Корпус №5, ауд.7</p>
+                                <p class="teacher"><i class="fas fa-user"></i> Нааматова Ж.Б.</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status-badge upcoming">Следующее</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="time-block">
+                                <span class="time">11:00 - 12:20</span>
+                                <span class="duration">80 мин</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h4>Свободное время</h4>
+                                <p class="location"><i class="fas fa-coffee"></i> Перерыв на обед</p>
+                            </div>
+                            <div class="schedule-status">
+                                <span class="status-badge free">Свободно</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="schedule.html" class="btn-full-schedule">
+                        <i class="fas fa-external-link-alt"></i> Полное расписание на неделю
+                    </a>
+                </section>
+
+                <!-- 快速笔记 -->
+                <section class="card">
+                    <h2><i class="fas fa-edit"></i> Быстрые заметки</h2>
+                    <div class="quick-notes">
+                        <textarea id="quickNote" placeholder="Запишите важную информацию... Например, задачи на сегодня или вопросы для преподавателя..." rows="4"></textarea>
+                        <div class="note-actions">
+                            <button id="saveNote" class="note-btn save">
+                                <i class="fas fa-save"></i> Сохранить
+                            </button>
+                            <button id="formatNote" class="note-btn format">
+                                <i class="fas fa-bold"></i> Форматировать
+                            </button>
+                            <button id="clearNote" class="note-btn clear">
+                                <i class="fas fa-trash"></i> Очистить
+                            </button>
+                        </div>
+                        <div class="note-stats">
+                            <span id="charCount">0 символов</span>
+                            <span id="lastSaved">Не сохранено</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 统计 -->
+                <section class="card stats-card">
+                    <h2><i class="fas fa-chart-pie"></i> Статистика семестра</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">30</div>
+                            <div class="stat-label">Всего кредитов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Посещаемость</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Активных предметов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">14</div>
+                            <div class="stat-label">Дней до сессии</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- 最近活动 -->
+        <section class="card">
+            <h2><i class="fas fa-history"></i> Последняя активность</h2>
+            <div class="activity-feed">
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Загружен новый материал по "Веб-системам дистанционного образования"</p>
+                        <span class="activity-time">2 часа назад</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon info">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Добавлено новое задание по "Программному обеспечению ЭОР"</p>
+                        <span class="activity-time">Вчера, 14:30</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Срок сдачи проекта по "Администрированию компьютерных систем" через 7 дней</p>
+                        <span class="activity-time">3 дня назад</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-leaf"></i> Зелёный портал</h3>
+                    <p>Персональная система управления учебным процессом</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>IT(m)-1-24 | Кыргызско-Арабский университет</p>
+                    <p>Образовательный портал: avn.arabaev.kg</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <a href="#">Учебные материалы</a>
+                    <a href="#">Расписание экзаменов</a>
+                    <a href="#">Онлайн-курсы</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Зелёный учебный портал | Версия 2.0 | Ли Цзе IT(m)-1-24</p>
+                <p>Обновлено: <span id="current-date"></span> | <span id="page-load-time"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
